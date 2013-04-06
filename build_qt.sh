@@ -1,6 +1,6 @@
 #!/bin/bash -x
-HERE=$(realpath "$0")
-HERE=$(dirname "$HERE")
+HERE=$(dirname "$0")
+HERE=$(cd "$0" ; pwd)
 QT5="$HERE/qt5"
 QT5BASE=$QT5/qtbase
 PROCESSORS=$(cat /proc/cpuinfo | grep processor | wc -l)
@@ -82,8 +82,6 @@ function checkout()
   cd $QT5 || exit 1
 
   ./init-repository -f || exit 1
-  git pull || exit 1
-  git submodule update  || exit 1
 }
 
 function build_qt()
