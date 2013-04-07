@@ -2,7 +2,7 @@
 HERE=$(dirname "$0")
 HERE=$(cd "$0" ; pwd)
 QT5="$HERE/qt5"
-QT5BASE=$QT5/qtbase
+QT5_INSTALL=$HERE/qt5_install
 PROCESSORS=$(cat /proc/cpuinfo | grep processor | wc -l)
 if [ -e "$PROCESSORS" ]
 then
@@ -86,7 +86,7 @@ function checkout()
 function build_qt()
 {
     #./configure -help
-    ./configure -no-qpa-platform-guard -nomake tests -nomake demos -nomake tools -nomake examples -no-gtkstyle -no-pch -opensource -confirm-license -prefix $QT5BASE || exit 1
+    ./configure -no-qpa-platform-guard -nomake tests -nomake demos -nomake tools -nomake examples -no-gtkstyle -no-pch -opensource -confirm-license -prefix $QT5_INSTALL || exit 1
     make -j$PROCESSORS || exit
 }
 
