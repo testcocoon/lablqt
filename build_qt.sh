@@ -86,8 +86,10 @@ function checkout()
 function build_qt()
 {
     #./configure -help
+    mkdir -p $QT5_INSTALL
     ./configure -no-qpa-platform-guard -nomake tests -nomake demos -nomake tools -nomake examples -no-gtkstyle -no-pch -opensource -confirm-license -prefix $QT5_INSTALL || exit 1
     make -j$PROCESSORS || exit
+    make -j$PROCESSORS install || exit
 }
 
 
