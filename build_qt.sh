@@ -32,7 +32,6 @@ sudo apt-get install $APT_OPTION \
     libxcb-dpms0-dev \
     libxcb-dri2-0-dev \
     libxcb-event1-dev \
-    libxcb-ewmh-dev \
     libxcb-glx0-dev \
     libxcb-icccm1 \
     libxcb-icccm1-dev \
@@ -92,7 +91,7 @@ function build_qt()
 }
 
 
-#debian_init
+debian_init
 checkout 
 build_qt
 exit 0
