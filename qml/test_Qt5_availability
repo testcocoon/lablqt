@@ -13,7 +13,7 @@ if ! verlte $QT_MIN_VERSION $QT_VERSION ; then
   exit 1
 fi
 curdir=$PWD
-
+export PKG_CONFIG_PATH=/$(qmake -query QT_INSTALL_LIBS)/pkgconfig/
 cd /tmp
 echo "#include <QtQuick/qquickview.h>
 int main() {
