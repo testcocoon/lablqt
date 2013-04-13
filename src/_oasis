@@ -8,7 +8,7 @@ Plugins:     DevFiles (0.3)
 
 Library lablqt
   Path:             lib
-  BuildDepends:     core,tyxml,sexplib.syntax,sexplib,threads,str,tyxml.parser,ocamlgraph,tarjangraph
+  BuildDepends:     core,tyxml,sexplib.syntax,sexplib,threads,str,tyxml.parser,ocamlgraph
   Modules:          Generators,CppGenerator,OcamlGenerator,Parser,SuperIndex,Simplexmlwriter,Filter
   BuildTools:       ocamlbuild
   
@@ -29,7 +29,7 @@ Executable xmltool
 Executable mocml
   Path:             mocml
   BuildTools:       ocamlbuild
-  BuildDepends:     lablqt,ocaml-syck,sexplib.syntax,sexplib,core,threads,str
+  BuildDepends:     lablqt,sexplib.syntax,sexplib,core,threads,str,yojson
   CompiledObject:   native
   MainIs:           mocml.ml
   
